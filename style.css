@@ -1,0 +1,42 @@
+:root { --bg: #212529; --fg: #f8f9fa; --accent: #f7d51d; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); }
+body { font-family: "Press Start 2P", monospace; line-height: 1.8; font-size: 12px; }
+main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+section { margin-top: 2.5rem; }
+[hidden] { display: none !important; }
+
+h1 { font-size: 1.4rem; line-height: 1.5; margin: 0 0 .5rem; }
+h2 { font-size: 1rem; margin: 0 0 .5rem; }
+p, li { font-size: .75rem; }
+ul { padding-left: 1.2rem; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* Hero */
+.hero { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+.hero img { width: 128px; height: 128px; image-rendering: pixelated; }
+.hero p { margin: 0; }
+.cursor { display: inline-block; width: .6em; height: 1em; margin-left: .4em;
+          background: var(--accent); vertical-align: text-bottom;
+          animation: blink 1s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+
+.links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+
+/* Habilidades */
+.skill { margin-bottom: 1rem; }
+.skill label { display: block; font-size: .7rem; margin-bottom: .3rem; }
+.badges { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+/* Experiencia y educación */
+.entry + .entry { margin-top: 1.5rem; }
+.meta { font-size: .65rem; opacity: .8; margin: 0 0 .5rem; }
+
+/* Proyectos */
+.grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+footer { margin-top: 3rem; text-align: center; font-size: .6rem; opacity: .7; }
+
+@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }

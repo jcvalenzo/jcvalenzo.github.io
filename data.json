@@ -1,0 +1,71 @@
+{
+  "name": "Juan Claudio Valenzuela Ortega",
+  "headline": "Desarrollador de software",
+  "location": "TODO: Ciudad, País",
+  "github": "TU_USUARIO",
+  "linkedin": "https://www.linkedin.com/in/juan-claudio-valenzuela-ortega-543275166/",
+  "avatar": "",
+
+  "about": "TODO: 2 o 3 frases. Qué haces, con qué tecnologías trabajas y qué tipo de problemas te gusta resolver.",
+
+  "skills": [
+    { "name": "TODO: Tecnología 1", "level": 80, "color": "success" },
+    { "name": "TODO: Tecnología 2", "level": 65, "color": "primary" },
+    { "name": "TODO: Tecnología 3", "level": 50, "color": "warning" }
+  ],
+
+  "tools": [
+    { "name": "Git", "color": "dark" },
+    { "name": "TODO", "color": "primary" },
+    { "name": "TODO", "color": "success" }
+  ],
+
+  "experience": [
+    {
+      "role": "TODO: Cargo",
+      "company": "TODO: Empresa",
+      "period": "2022 – Actualidad",
+      "highlights": [
+        "TODO: logro o responsabilidad concreta.",
+        "TODO: otro logro, mejor si lleva un número."
+      ]
+    },
+    {
+      "role": "TODO: Cargo anterior",
+      "company": "TODO: Empresa",
+      "period": "2019 – 2022",
+      "highlights": [
+        "TODO: logro o responsabilidad concreta."
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "TODO: Proyecto 1",
+      "description": "Qué hace en una línea.",
+      "url": "https://github.com/TU_USUARIO/REPO",
+      "linkLabel": "Ver código"
+    },
+    {
+      "name": "TODO: Proyecto 2",
+      "description": "Qué hace en una línea.",
+      "url": "https://github.com/TU_USUARIO/REPO",
+      "linkLabel": "Ver código"
+    }
+  ],
+
+  "education": [
+    {
+      "title": "TODO: Título",
+      "institution": "TODO: Institución",
+      "period": "2015 – 2019"
+    }
+  ],
+
+  "contact": {
+    "message": "¿Quieres trabajar juntos? Escríbeme por LinkedIn.",
+    "buttonLabel": "Enviar mensaje",
+    "url": "https://www.linkedin.com/in/juan-claudio-valenzuela-ortega-543275166/"
+  }
+}
