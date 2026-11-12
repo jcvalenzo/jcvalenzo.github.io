@@ -1,42 +1,284 @@
-:root { --bg: #212529; --fg: #f8f9fa; --accent: #f7d51d; }
+:root {
+    color-scheme: dark;
+    --bg: #15171a;
+    --panel: #212529;
+    --fg: #f8f9fa;
+    --muted: #adb5bd;
+    --accent: #f7d51d;
+    --cyan: #209cee;
+    --green: #92cc41;
+    --grid-line: rgba(255, 255, 255, 0.03);
+}
 
-* { box-sizing: border-box; }
-html, body { margin: 0; background: var(--bg); color: var(--fg); }
-body { font-family: "Press Start 2P", monospace; line-height: 1.8; font-size: 12px; }
-main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
-section { margin-top: 2.5rem; }
-[hidden] { display: none !important; }
+* {
+    box-sizing: border-box;
+}
 
-h1 { font-size: 1.4rem; line-height: 1.5; margin: 0 0 .5rem; }
-h2 { font-size: 1rem; margin: 0 0 .5rem; }
-p, li { font-size: .75rem; }
-ul { padding-left: 1.2rem; }
-a { color: var(--accent); }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+html,
+body,
+button,
+input,
+textarea,
+select {
+    font-family: "Press Start 2P", "Cascadia Code", monospace;
+}
 
-/* Hero */
-.hero { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-.hero img { width: 128px; height: 128px; image-rendering: pixelated; }
-.hero p { margin: 0; }
-.cursor { display: inline-block; width: .6em; height: 1em; margin-left: .4em;
-          background: var(--accent); vertical-align: text-bottom;
-          animation: blink 1s steps(2, start) infinite; }
-@keyframes blink { to { visibility: hidden; } }
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--fg);
+    font-size: 13px;
+    line-height: 1.85;
+}
 
-.links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
 
-/* Habilidades */
-.skill { margin-bottom: 1rem; }
-.skill label { display: block; font-size: .7rem; margin-bottom: .3rem; }
-.badges { display: flex; gap: .5rem; flex-wrap: wrap; }
+a:hover {
+    text-decoration: underline;
+}
 
-/* Experiencia y educación */
-.entry + .entry { margin-top: 1.5rem; }
-.meta { font-size: .65rem; opacity: .8; margin: 0 0 .5rem; }
+main {
+    width: min(100% - 2rem, 860px);
+    margin: 2.5rem auto;
+}
 
-/* Proyectos */
-.grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.profile-card {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background-color: var(--panel);
+}
 
-footer { margin-top: 3rem; text-align: center; font-size: .6rem; opacity: .7; }
+.nes-container.is-dark.with-title>.title {
+    background-color: var(--panel);
+    color: var(--accent);
+    font-size: 11px;
+    padding: 0 0.6rem;
+}
 
-@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+.status-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: blink 1.6s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.profile-main {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.avatar {
+    width: 104px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border: 4px solid var(--fg);
+    box-shadow: 6px 6px 0 #000;
+    background: #2c3136;
+    color: var(--accent);
+    font-size: 24px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.eyebrow {
+    margin: 0 0 0.6rem;
+    color: var(--cyan);
+    font-size: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.15rem, 3.2vw, 1.65rem);
+    line-height: 1.45;
+    color: var(--fg);
+}
+
+.headline {
+    margin: 0.65rem 0 0;
+    color: var(--accent);
+    font-size: 11px;
+}
+
+.location {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.about-balloon {
+    margin: 1.75rem 0 1.5rem;
+    width: 100%;
+}
+
+.about {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #e9ecef;
+}
+
+.inner-box {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+}
+
+.experience-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.experience-line .nes-icon {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    background: #343a40;
+    border: 3px solid var(--fg);
+    box-shadow: 3px 3px 0 #000;
+    color: var(--fg);
+    font-size: 10px;
+    transition: transform 0.1s steps(2);
+}
+
+.skill-badge:hover {
+    transform: translate(-2px, -2px);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.cta-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 4px dashed #495057;
+}
+
+.cta-panel p {
+    flex: 1 1 260px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* Estilos de los botones de redes sociales con NES.css */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    background-color: #343a40;
+    border: 3px solid var(--fg);
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.1s steps(2), background-color 0.1s;
+}
+
+.social-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 #000;
+    background-color: #495057;
+    text-decoration: none;
+}
+
+.social-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+footer {
+    margin-top: 2rem;
+    color: var(--muted);
+    text-align: center;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 11px;
+    }
+
+    main {
+        width: calc(100% - 1rem);
+        margin: 1rem auto;
+    }
+
+    .profile-main {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .avatar {
+        width: 80px;
+        font-size: 18px;
+    }
+
+    .cta-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

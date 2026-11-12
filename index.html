@@ -1,85 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perfil de desarrollador</title>
-  <meta name="description" content="Perfil de desarrollador.">
 
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#212529">
+  <meta name="description"
+    content="Juan Claudio Valenzuela Ortega, Software Engineer especializado en Java y Spring Boot.">
+  <title>Juan Claudio Valenzuela Ortega | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code@5.0.8/index.min.css" rel="stylesheet">
   <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<main>
+  <main>
+    <section class="nes-container is-dark with-title profile-card">
+      <p class="title status-title">
+        <span class="status-dot" aria-hidden="true"></span> PLAYER 01 · ONLINE
+      </p>
 
-  <noscript>
-    <div class="nes-container is-dark">
-      <p>Esta página necesita JavaScript para mostrar el perfil.</p>
-    </div>
-  </noscript>
+      <header class="profile-main">
+        <div id="avatar-container" class="avatar" aria-hidden="true">
+          <span id="avatar-fallback">JV</span>
+        </div>
+        <div class="identity">
+          <p class="eyebrow">&gt; BACKEND DEVELOPER</p>
+          <h1 id="name">CARGANDO...</h1>
+          <p id="headline" class="headline"></p>
+          <p id="location" class="location"></p>
+        </div>
+      </header>
 
-  <div id="error" class="nes-container is-dark with-title" hidden>
-    <p class="title">Error</p>
-    <p id="error-text"></p>
-  </div>
-
-  <header id="hero" class="nes-container is-dark with-title" hidden>
-    <p class="title">Jugador 1</p>
-    <div class="hero"></div>
-    <div class="links"></div>
-  </header>
-
-  <section id="about" hidden>
-    <div class="nes-container is-dark with-title">
-      <p class="title">Sobre mí</p>
-      <p class="content"></p>
-    </div>
-  </section>
-
-  <section id="skills" hidden>
-    <div class="nes-container is-dark with-title">
-      <p class="title">Habilidades</p>
-      <div class="bars"></div>
-      <div class="tools" hidden>
-        <p>Otras herramientas:</p>
-        <p class="badges"></p>
+      <div class="nes-balloon from-left is-dark about-balloon">
+        <p id="about" class="about"></p>
       </div>
-    </div>
-  </section>
 
-  <section id="experience" hidden>
-    <div class="nes-container is-dark with-title">
-      <p class="title">Experiencia</p>
-      <div class="entries"></div>
-    </div>
-  </section>
+      <div class="nes-container is-dark with-title inner-box">
+        <p class="title">QUEST ACTUAL</p>
+        <div class="experience-line">
+          <i class="nes-icon coin is-small" aria-hidden="true"></i>
+          <span id="experience"></span>
+        </div>
+      </div>
 
-  <section id="projects" hidden>
-    <div class="nes-container is-dark with-title">
-      <p class="title">Proyectos</p>
-      <div class="grid"></div>
-    </div>
-  </section>
+      <div class="nes-container is-dark with-title inner-box">
+        <p class="title">INVENTARIO / STACK</p>
+        <div id="skills" class="skills" aria-label="Tecnologías principales"></div>
+      </div>
 
-  <section id="education" hidden>
-    <div class="nes-container is-dark with-title">
-      <p class="title">Educación</p>
-      <div class="entries"></div>
-    </div>
-  </section>
+      <div class="cta-panel">
+        <p id="cta-copy"></p>
 
-  <section id="contact" hidden>
-    <div class="nes-container is-dark with-title">
-      <p class="title">Contacto</p>
-      <p class="content"></p>
-      <div class="links"></div>
-    </div>
-  </section>
+        <!-- Contenedor de iconos sociales estilo NES -->
+        <div class="social-links" aria-label="Enlaces sociales">
+          <a id="github-link" class="social-btn" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <i class="nes-icon github is-medium"></i>
+          </a>
+          <a id="linkedin-link" class="social-btn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <i class="nes-icon linkedin is-medium"></i>
+          </a>
+        </div>
+      </div>
 
-  <footer>Hecho con <a href="https://nostalgic-css.github.io/NES.css/" target="_blank" rel="noopener">NES.css</a></footer>
-</main>
-
-<script src="js/main.js"></script>
+      <footer>
+        HECHO CON <i class="nes-icon is-small heart" aria-hidden="true"></i> Y
+        <a href="https://nostalgic-css.github.io/NES.css/" target="_blank" rel="noopener noreferrer">NES.css</a>
+      </footer>
+    </section>
+  </main>
+  <script src="js/main.js" defer></script>
 </body>
+
 </html>
