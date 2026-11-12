@@ -1,13 +1,33 @@
+/* Definición de Variables de Color para Modo Oscuro (Por defecto) */
 :root {
-    color-scheme: dark;
-    --bg: #15171a;
-    --panel: #212529;
-    --fg: #f8f9fa;
-    --muted: #adb5bd;
-    --accent: #f7d51d;
-    --cyan: #209cee;
-    --green: #92cc41;
-    --grid-line: rgba(255, 255, 255, 0.03);
+    --bg: #0b0f19;
+    --panel: #131b2e;
+    --panel-inner: #1a233a;
+    --fg: #f0f4f8;
+    --muted: #94a3b8;
+    --accent: #facc15;
+    --cyan: #38bdf8;
+    --green: #4ade80;
+    --border-color: #334155;
+    --grid-line: rgba(56, 189, 248, 0.04);
+    --btn-bg: #1e293b;
+    --btn-hover: #334155;
+}
+
+/* Variables para Modo Claro */
+[data-theme="light"] {
+    --bg: #e2e8f0;
+    --panel: #ffffff;
+    --panel-inner: #f1f5f9;
+    --fg: #0f172a;
+    --muted: #475569;
+    --accent: #ca8a04;
+    --cyan: #0284c7;
+    --green: #16a34a;
+    --border-color: #0f172a;
+    --grid-line: rgba(15, 23, 42, 0.04);
+    --btn-bg: #e2e8f0;
+    --btn-hover: #cbd5e1;
 }
 
 * {
@@ -36,10 +56,11 @@ body {
     color: var(--fg);
     font-size: 13px;
     line-height: 1.85;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-    color: var(--accent);
+    color: var(--cyan);
     text-decoration: none;
 }
 
@@ -54,12 +75,23 @@ main {
 
 .profile-card {
     padding: clamp(1.5rem, 4vw, 2.5rem);
-    background-color: var(--panel);
+    background-color: var(--panel) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
-.nes-container.is-dark.with-title>.title {
-    background-color: var(--panel);
-    color: var(--accent);
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.nes-container.with-title>.title {
+    background-color: var(--panel) !important;
+    color: var(--accent) !important;
     font-size: 11px;
     padding: 0 0.6rem;
 }
@@ -68,6 +100,7 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
+    margin: 0 !important;
 }
 
 .status-dot {
@@ -85,12 +118,24 @@ main {
     }
 }
 
+#theme-toggle {
+    background-color: var(--btn-bg);
+    color: var(--fg);
+    border-color: var(--border-color);
+    font-size: 9px;
+    padding: 0.4rem 0.8rem;
+}
+
+#theme-toggle:hover {
+    background-color: var(--btn-hover);
+}
+
 .profile-main {
     display: grid;
     grid-template-columns: 104px minmax(0, 1fr);
     align-items: center;
     gap: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 
 .avatar {
@@ -98,9 +143,9 @@ main {
     aspect-ratio: 1;
     display: grid;
     place-items: center;
-    border: 4px solid var(--fg);
-    box-shadow: 6px 6px 0 #000;
-    background: #2c3136;
+    border: 4px solid var(--border-color);
+    box-shadow: 5px 5px 0 var(--border-color);
+    background: var(--panel-inner);
     color: var(--accent);
     font-size: 24px;
     overflow: hidden;
@@ -142,18 +187,22 @@ h1 {
 .about-balloon {
     margin: 1.75rem 0 1.5rem;
     width: 100%;
+    background-color: var(--panel-inner) !important;
+    color: var(--fg) !important;
+    border-color: var(--border-color) !important;
 }
 
 .about {
     margin: 0;
     font-size: 12px;
     line-height: 1.9;
-    color: #e9ecef;
 }
 
 .inner-box {
     margin-top: 1.5rem;
     padding: 1.25rem;
+    background-color: var(--panel-inner);
+    border-color: var(--border-color);
 }
 
 .experience-line {
@@ -178,9 +227,9 @@ h1 {
 .skill-badge {
     display: inline-block;
     padding: 0.45rem 0.75rem;
-    background: #343a40;
-    border: 3px solid var(--fg);
-    box-shadow: 3px 3px 0 #000;
+    background: var(--btn-bg);
+    border: 3px solid var(--border-color);
+    box-shadow: 3px 3px 0 var(--border-color);
     color: var(--fg);
     font-size: 10px;
     transition: transform 0.1s steps(2);
@@ -188,8 +237,8 @@ h1 {
 
 .skill-badge:hover {
     transform: translate(-2px, -2px);
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--cyan);
+    color: var(--cyan);
 }
 
 .cta-panel {
@@ -200,7 +249,7 @@ h1 {
     gap: 1rem 1.5rem;
     margin-top: 1.75rem;
     padding-top: 1.25rem;
-    border-top: 4px dashed #495057;
+    border-top: 4px dashed var(--border-color);
 }
 
 .cta-panel p {
@@ -211,7 +260,6 @@ h1 {
     line-height: 1.8;
 }
 
-/* Estilos de los botones de redes sociales con NES.css */
 .social-links {
     display: flex;
     gap: 1rem;
@@ -224,22 +272,17 @@ h1 {
     align-items: center;
     width: 46px;
     height: 46px;
-    background-color: #343a40;
-    border: 3px solid var(--fg);
-    box-shadow: 3px 3px 0 #000;
+    background-color: var(--btn-bg);
+    border: 3px solid var(--border-color);
+    box-shadow: 3px 3px 0 var(--border-color);
     transition: transform 0.1s steps(2), background-color 0.1s;
 }
 
 .social-btn:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0 #000;
-    background-color: #495057;
+    box-shadow: 5px 5px 0 var(--border-color);
+    background-color: var(--btn-hover);
     text-decoration: none;
-}
-
-.social-btn:active {
-    transform: translate(1px, 1px);
-    box-shadow: 2px 2px 0 #000;
 }
 
 footer {

@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#212529">
-  <meta name="description"
-    content="Juan Claudio Valenzuela Ortega, Software Engineer especializado en Java y Spring Boot.">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="description" content="Juan Claudio Valenzuela Ortega, Software Engineer especializado en Java y Spring Boot.">
   <title>Juan Claudio Valenzuela Ortega | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +13,17 @@
   <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
   <main>
-    <section class="nes-container is-dark with-title profile-card">
-      <p class="title status-title">
-        <span class="status-dot" aria-hidden="true"></span> PLAYER 01 · ONLINE
-      </p>
+    <section class="nes-container with-title profile-card" id="main-container">
+      <div class="top-bar">
+        <p class="title status-title">
+          <span class="status-dot" aria-hidden="true"></span> PLAYER 01 · ONLINE
+        </p>
+        <button id="theme-toggle" class="nes-btn is-small" type="button" aria-label="Cambiar modo de color">
+          ☀️ LIGHT
+        </button>
+      </div>
 
       <header class="profile-main">
         <div id="avatar-container" class="avatar" aria-hidden="true">
@@ -35,11 +37,11 @@
         </div>
       </header>
 
-      <div class="nes-balloon from-left is-dark about-balloon">
+      <div class="nes-balloon from-left about-balloon" id="about-balloon">
         <p id="about" class="about"></p>
       </div>
 
-      <div class="nes-container is-dark with-title inner-box">
+      <div class="nes-container with-title inner-box">
         <p class="title">QUEST ACTUAL</p>
         <div class="experience-line">
           <i class="nes-icon coin is-small" aria-hidden="true"></i>
@@ -47,15 +49,13 @@
         </div>
       </div>
 
-      <div class="nes-container is-dark with-title inner-box">
+      <div class="nes-container with-title inner-box">
         <p class="title">INVENTARIO / STACK</p>
         <div id="skills" class="skills" aria-label="Tecnologías principales"></div>
       </div>
 
       <div class="cta-panel">
         <p id="cta-copy"></p>
-
-        <!-- Contenedor de iconos sociales estilo NES -->
         <div class="social-links" aria-label="Enlaces sociales">
           <a id="github-link" class="social-btn" target="_blank" rel="noopener noreferrer" title="GitHub">
             <i class="nes-icon github is-medium"></i>
@@ -67,12 +67,11 @@
       </div>
 
       <footer>
-        HECHO CON <i class="nes-icon is-small heart" aria-hidden="true"></i> Y
+        HECHO CON <i class="nes-icon is-small heart" aria-hidden="true"></i> Y 
         <a href="https://nostalgic-css.github.io/NES.css/" target="_blank" rel="noopener noreferrer">NES.css</a>
       </footer>
     </section>
   </main>
   <script src="js/main.js" defer></script>
 </body>
-
 </html>

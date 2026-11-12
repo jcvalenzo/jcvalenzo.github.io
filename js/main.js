@@ -1,4 +1,33 @@
 (() => {
+  // Lógica del selector de modo Claro / Oscuro
+  const initThemeToggle = () => {
+    const toggleBtn = document.querySelector("#theme-toggle");
+    const htmlElement = document.documentElement;
+
+    // Recuperar preferencia guardada o usar 'dark' por defecto
+    const savedTheme = localStorage.getItem("portfolio_theme") || "dark";
+    htmlElement.setAttribute("data-theme", savedTheme);
+    updateThemeButton(savedTheme);
+
+    toggleBtn.addEventListener("click", () => {
+      const currentTheme = htmlElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      htmlElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("portfolio_theme", newTheme);
+      updateThemeButton(newTheme);
+    });
+  };
+
+  const updateThemeButton = (theme) => {
+    const toggleBtn = document.querySelector("#theme-toggle");
+    if (theme === "light") {
+      toggleBtn.innerHTML = "🌙 DARK";
+    } else {
+      toggleBtn.innerHTML = "☀️ LIGHT";
+    }
+  };
+
   const render = (profile) => {
     document.title = `${profile.name} | ${profile.headline}`;
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -12,24 +41,22 @@
     document.querySelector("#about").textContent = profile.about;
     document.querySelector("#experience").textContent = profile.experience;
     document.querySelector("#cta-copy").textContent = profile.callToAction;
-
-    // Enlaces de redes sociales dinámicos
+    
     document.querySelector("#linkedin-link").href = profile.linkedin;
     document.querySelector("#github-link").href = profile.github;
 
-    // Lógica para imagen de perfil con respaldo a iniciales
     const avatarContainer = document.querySelector("#avatar-container");
-    const profileImgSrc = "img/avatar.jpg";
+    const profileImgSrc = "img/avatar.jpg"; 
 
     const img = new Image();
     img.src = profileImgSrc;
     img.alt = profile.name;
-
+    
     img.onload = () => {
       avatarContainer.innerHTML = "";
       avatarContainer.appendChild(img);
     };
-
+    
     img.onerror = () => {
       console.log("No se encontró imagen de perfil, usando respaldo de iniciales.");
     };
@@ -44,6 +71,8 @@
       skillsContainer.append(badge);
     });
   };
+
+  initThemeToggle();
 
   fetch("data.json")
     .then((response) => {
